@@ -27,6 +27,12 @@ class BoardServiceImpl(
         return boardRepository.findAll().map { toDto(it) }
     }
 
+    override fun fixContent(boardDto: BoardDto) {
+        val boardEntity: BoardEntity = boardRepository.findById(boardDto.id).get()
+        boardEntity.fixContent(boardDto.title, boardDto.content)
+        boardRepository.save(boardEntity)
+    }
+
     override fun delete(id: Long) {
         boardRepository.deleteById(id)
     }

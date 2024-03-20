@@ -20,7 +20,7 @@ class BoardEntity(
     var content : String)
 {
 
-    fun updateBoard(title: String, content: String){
+    fun fixContent(title: String, content: String){
         this.title=title
         this.content=content
     }

@@ -34,6 +34,13 @@ class BoardController(
         return boardService.readAll()
     }
 
+    @PutMapping("")
+    fun fixContent(
+        @RequestBody boardDto: BoardDto
+    ){
+        return boardService.fixContent(boardDto)
+    }
+
     @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
     fun delete(

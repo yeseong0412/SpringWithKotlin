@@ -9,6 +9,7 @@ interface BoardService {
     fun create(boardDto: BoardDto)
     fun read(id:Long) : BoardDto
     fun readAll() : List<BoardDto>
+    fun fixContent(boardDto: BoardDto)
     fun delete(id:Long)
 
     fun toDto(boardEntity: BoardEntity) : BoardDto{
